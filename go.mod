@@ -1,4 +1,4 @@
-module web_server
+module httpserver
 
 go 1.16
 

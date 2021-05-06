@@ -1,4 +1,4 @@
-package web_server
+package httpserver
 
 import (
 	"crypto/tls"
