@@ -44,8 +44,8 @@ func TestHandler(t *testing.T) {
 		t.Fatalf("Expected returned value of Server() to be type *http.Server, instead got %T", srv)
 	}
 
-	server.Handler.HandleFunc("/",func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("success"))
+	server.Handler.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		_, _ = w.Write([]byte("success"))
 	})
 
 	rr := httptest.NewRecorder()
@@ -66,7 +66,7 @@ func TestHandler(t *testing.T) {
 }
 
 func TestConfig_Yaml(t *testing.T) {
-	data, err := ioutil.ReadFile("server.yaml.example")
+	data, err := ioutil.ReadFile("server.yaml")
 	if err != nil {
 		t.Fatalf("Error reading config file \"server.yaml.example\", %v ", err.Error())
 	}

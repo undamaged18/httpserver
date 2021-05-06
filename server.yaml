@@ -1,8 +1,8 @@
 server_name: test
 address: :8080
 tls:
-  enable: true || false
-  version: tls1.3 || tls1.2 || tls1.1
+  enable: true
+  version: tls1.3
 timeouts:
   request: 5s
   read: 10s
@@ -14,7 +14,7 @@ csrf:
   key: 32-byte-string
   field_name: csrf
   cookie_name: csrf
-  secure: true || false
-  http_only: true || false
-  same_site: strict || lax || none
+  secure: true
+  http_only: true
+  same_site: strict
   path: /
